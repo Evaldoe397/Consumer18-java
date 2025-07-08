@@ -34,11 +34,15 @@ public class Product{
 	public boolean nonStaticProductPredicate() {
 		return price >= 100.0;
 	}
+	
+	public static void staticPriceUpdate(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
+	}
 
 	@Override
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("#.##");
-		return "Product [name=" + name + ", price=" + df.format(price) + "]";
+		return "Product " + name + ", " + df.format(price);
 	}
 
 		
